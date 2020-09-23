@@ -1,15 +1,10 @@
-name: BRL-CAD
-
+name: benchhmark
 on: [push]
-
 jobs:
-  benchmark:
-
-    name: "Windows Latest MSVC"
+  bench:
     runs-on: windows-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - runs: dir
-    - runs: ./bin/benchmark run
+      - uses: actions/checkout@v2
+      - run: dir
+      - run: ./bin/benchmark run
 
