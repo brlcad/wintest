@@ -1,0 +1,1 @@
+package ifneeded Tktable 2.10 [list load [file join $dir .. .. "bin" Tktable.dll] Tktable]

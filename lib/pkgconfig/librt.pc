@@ -1,0 +1,13 @@
+prefix=C:/Program Files (x86)/BRLCAD
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+
+Name: librt
+Description: BRL-CAD Ray-Trace Library
+Version: 7.32.0
+Requires: libbn libbu
+Libs: -L${libdir} -lrt -lbn -lbu  -lstdc++ -ltcl8.6 -lregex 
+Cflags: -I${includedir}/brlcad -I${includedir}

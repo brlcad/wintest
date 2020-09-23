@@ -1,0 +1,13 @@
+prefix=C:/Program Files (x86)/BRLCAD
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+
+Name: libgcv
+Description: BRL-CAD Geometry Conversion Library
+Version: 7.32.0
+Requires: librt libbn libbu
+Libs: -L${libdir} -lgcv -lrt -lbn -lbu -ltcl8.6 
+Cflags: -I${includedir}/brlcad -I${includedir}

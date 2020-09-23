@@ -1,0 +1,13 @@
+prefix=C:/Program Files (x86)/BRLCAD
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+
+Name: libbn
+Description: BRL-CAD Numerics Library
+Version: 7.32.0
+Requires: libbu
+Libs: -L${libdir} -lbn -lbu 
+Cflags: -I${includedir}/brlcad -I${includedir}
