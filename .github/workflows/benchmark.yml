@@ -12,7 +12,6 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build
-      run:
-        dir
-        ./bin/benchmark run TIMEFRAME=1
+      run: dir
+      run: ./bin/benchmark run
 
