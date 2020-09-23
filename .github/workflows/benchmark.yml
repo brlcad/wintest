@@ -12,5 +12,5 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build
-      shell: ./bin/benchmark run TIMEFRAME=1
+      run: ./bin/benchmark run TIMEFRAME=1
 
