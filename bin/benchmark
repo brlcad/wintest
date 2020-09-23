@@ -607,7 +607,9 @@ if test ! "x${ret}" = "x0" ; then
 fi
 
 # sanity check: make sure $CMP runs
-eval \"$CMP\" $NUL $NUL > $NUL 2>&1
+#eval \"$CMP\" $NUL $NUL > $NUL 2>&1
+echo $NUL
+eval \"$CMP\" $NUL $NUL
 ret=$?
 if test ! "x${ret}" = "x0" ; then
     $ECHO
