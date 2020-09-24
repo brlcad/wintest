@@ -76,7 +76,11 @@ if test -f NUL ; then
     echo "INTERNAL ERROR: NUL file is in the way (delete it)"
     exit 1
 fi
-out=`cat NUL 2>&1`
+echo "listing /dev"
+ls -la /dev
+echo "DONE LISTING /dev"
+echo
+out=`echo "hello" > NUL 2>&1`
 ret=$?
 echo "OUT IS $out"
 if test "x$ret" = "x0" ; then
@@ -88,6 +92,10 @@ elif test -e /dev/null ; then
 else
     echo "INTERNAL ERROR: cannot determine a suitable null device"
     exit 1
+fi
+if test -e NUL ; then
+	echo "UH OH... found NUL file"
+	ls -la
 fi
 echo "RUNNING PIXCMP: $CMP"
 $CMP $NUL $NUL
