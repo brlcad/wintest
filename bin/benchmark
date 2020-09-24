@@ -78,14 +78,20 @@ if test -f NUL ; then
 fi
 out=`cat NUL 2>&1`
 ret=$?
+echo "OUT IS $out"
 if test "x$ret" = "x0" ; then
+    echo "USING NUL"
     export NUL=NUL
 elif test -e /dev/null ; then
+    echo "USING /dev/null because it exists..."
     export NUL=/dev/null
 else
     echo "INTERNAL ERROR: cannot determine a suitable null device"
     exit 1
 fi
+echo "RUNNING PIXCMP: $CMP"
+$CMP $NUL $NUL
+echo "DONE RUNNING PIXCMP"
 
 # commands that this script expects
 for __cmd in echo pwd ; do
